@@ -1,10 +1,14 @@
 import { fetchBaseQuery, createApi } from "@reduxjs/toolkit/query/react";
 
-const BASE_URL = "http://localhost:5000";
+// const BASE_URL = "https://humor-junk-menu-sleeping.trycloudflare.com";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: BASE_URL,
+  baseUrl: "https://humor-junk-menu-sleeping.trycloudflare.com",
   credentials: "include",
+  prepareHeaders: (headers) => {
+    headers.set("Content-Type", "application/json");
+    return headers;
+  },
 });
 
 export const apiSlice = createApi({
