@@ -1,39 +1,37 @@
 import { apiSlice } from "../apiSlice";
 
-const BASE_URL = "http://localhost:5000";
-
 export const userApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (data) => ({
-        url: `${BASE_URL}/AdminAuth/signin`,
+        url: `/AdminAuth/signin`,
         method: "POST",
         body: data,
       }),
     }),
     register: builder.mutation({
       query: (data) => ({
-        url: `${BASE_URL}/AdminAuth/signup`,
+        url: `/AdminAuth/signup`,
         method: "POST",
         body: data,
       }),
     }),
     logout: builder.mutation({
       query: () => ({
-        url: `${BASE_URL}/AdminAuth/signout`,
+        url: `/AdminAuth/signout`,
         method: "GET",
       }),
     }),
     profile: builder.mutation({
       query: (data) => ({
-        url: `${BASE_URL}/AdminAuth/profile`,
+        url: `/AdminAuth/profile`,
         method: "PUT",
         body: data,
       }),
     }),
     changePassword: builder.mutation({
       query: (data) => ({
-        url: `${BASE_URL}/AdminAuth/change-password`,
+        url: `/AdminAuth/change-password`,
         method: "PUT",
         body: data,
       }),
